@@ -1,6 +1,7 @@
 package com.example.android4homework1.data.remote
 
 import com.example.android4homework1.data.remote.apiservices.CharacterApiService
+import com.example.android4homework1.data.repositories.TokenInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -19,13 +20,15 @@ class RetrofitClient {
         .build()
 
     private val retrofitClient = Retrofit.Builder()
-        .baseUrl("https://rickandmortyapi.com/")
+        .baseUrl("https://kitsu.io/api/edge/")
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
         .build()
 
-    private fun provideLoggingInterceptor() = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+    private fun provideLoggingInterceptor() =
+        HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
-    
-     fun provideCharacterApiService() = retrofitClient.create(CharacterApiService::class.java)
+
+    fun provideAnimeApiService(): CharacterApiService = retrofitClient.create(CharacterApiService::class.java)
+
 }
