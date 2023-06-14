@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.navArgs
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.bumptech.glide.Glide
 import com.example.android4homework1.utils.Resource
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentAnimeDetailBinding
@@ -38,7 +39,9 @@ class AnimeDetailFragment : Fragment(R.layout.fragment_anime_detail) {
                     Log.e("AnimeDetailLoading", it.message.toString())
                 }
                 is Resource.Success -> {
-                  binding.textView.text = it.data!!.detailData.attributes.description
+                    Glide.with(binding.imageView).load(it.data!!.detailData.attributes.posterImage.original)
+                        .into(binding.imageView)
+                  binding.textView.text = it.data.detailData.attributes.description
                 }
             }
         }
