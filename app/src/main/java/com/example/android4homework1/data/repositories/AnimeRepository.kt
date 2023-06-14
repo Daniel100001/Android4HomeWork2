@@ -5,7 +5,7 @@ import com.example.android4homework1.data.remote.apiservices.CharacterApiService
 import com.example.android4homework1.utils.Resource
 import javax.inject.Inject
 
-class CharacterRepository @Inject constructor(
+class AnimeRepository @Inject constructor(
     private val service: CharacterApiService
 ) {
 
@@ -13,6 +13,15 @@ class CharacterRepository @Inject constructor(
         emit(Resource.Loading())
         try {
             emit(Resource.Success(service.fetchCharacters()))
+        }catch (exception: Exception){
+            emit(Resource.Error(exception.localizedMessage ?: "Error",null))
+        }
+    }
+
+    fun fetchSingleAnime(id: String) = liveData {
+        emit(Resource.Loading())
+        try {
+            emit(Resource.Success(service.fetchSingleAnime(id)))
         }catch (exception: Exception){
             emit(Resource.Error(exception.localizedMessage ?: "Error",null))
         }

@@ -9,21 +9,22 @@ import com.bumptech.glide.Glide
 import com.example.android4homework1.models.rickAndMortyCharacter.AnimeModel
 import com.example.rickandmorty.databinding.ItemKitsuBinding
 
-class AnimeAdapter() :
+class AnimeAdapter(private val onItemClick: (id: String) -> Unit) :
     ListAdapter<AnimeModel, AnimeAdapter.ViewHolder>(DiffUtilCallback()) {
 
     inner class ViewHolder(private val binding: ItemKitsuBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-//        init {
-//            itemView.setOnClickListener {
-//                onItemClick(position)
-//            }
-//        }
+        init {
+            itemView.setOnClickListener {
+                onItemClick(position.toString())
+            }
+        }
 
         fun onBind(animeModel: AnimeModel) {
             binding.itemCharacterName.text = animeModel.attributes.titles.nameInJapanese
-
+            Glide.with(binding.itemCharacterImage).load(animeModel.attributes.posterImage.original)
+                .into(binding.itemCharacterImage)
         }
     }
 

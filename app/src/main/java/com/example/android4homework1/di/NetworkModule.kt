@@ -17,10 +17,8 @@ object NetworkModule {
     fun provideRetrofitClient() = RetrofitClient()
 
 
-
     @Singleton
     @Provides
     fun provideAnimeApiService(retrofitClient: RetrofitClient): CharacterApiService =
         retrofitClient.provideAnimeApiService()
-
 }

@@ -3,15 +3,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.android4homework1.ui.fragments.character.CharacterFragment">
+    tools:context="com.example.android4homework1.ui.fragments.anime.AnimeFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/anime_recycler_view"
+        android:layout_margin="2dp"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        tools:listitem="@layout/item_kitsu"
+        app:spanCount="3"
+        tools:itemCount="15"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
