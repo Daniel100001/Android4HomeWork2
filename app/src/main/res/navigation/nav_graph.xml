@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/characterFragment"
-        android:name="com.example.android4homework1.ui.fragments.anime.AnimeFragment"
+        android:name="com.example.android4homework1.ui.fragments.anime.MangaFragment"
         android:label="fragment_character"
         tools:layout="@layout/framgent_anime" >
         <action

@@ -2,7 +2,7 @@ package com.example.android4homework1.models.rickAndMortyCharacter
 
 import com.google.gson.annotations.SerializedName
 
-data class AnimeModel(
+data class MangaModel(
 
     @SerializedName("id")
     val id: String,
