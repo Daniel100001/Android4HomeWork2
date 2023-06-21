@@ -7,21 +7,44 @@
 
     <fragment
         android:id="@+id/characterFragment"
-        android:name="com.example.android4homework1.ui.fragments.anime.MangaFragment"
+        android:name="com.example.android4homework2.ui.fragments.anime.AnimeFragment"
         android:label="fragment_character"
-        tools:layout="@layout/framgent_anime" >
+        tools:layout="@layout/fragment_anime">
+
         <action
             android:id="@+id/action_characterFragment_to_animeDetailFragment"
             app:destination="@id/animeDetailFragment" />
     </fragment>
+
     <fragment
         android:id="@+id/animeDetailFragment"
-        android:name="com.example.android4homework1.ui.fragments.anime.animeDetail.AnimeDetailFragment"
+        android:name="com.example.android4homework2.ui.fragments.anime.detail.DetailAnimeFragment"
         android:label="fragment_anime_detail"
-        tools:layout="@layout/fragment_anime_detail" >
+        tools:layout="@layout/fragment_anime_detail">
+
         <argument
             android:name="id"
-            app:argType="string" />
+            app:argType="integer" />
+    </fragment>
+    <fragment
+
+        android:id="@+id/mangaDetailFragment"
+        android:name="com.example.android4homework2.ui.fragments.manga.detail.MangaDetailFragment"
+        android:label="MangaDetailFragment">
+
+        <argument
+            android:name="id"
+            app:argType="integer" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mangaFragment"
+        android:name="com.example.android4homework2.ui.fragments.manga.MangaFragment"
+        android:label="MangaFragment">
+
+        <action
+            android:id="@+id/action_mangaFragment_to_mangaDetailFragment"
+            app:destination="@id/mangaDetailFragment" />
     </fragment>
 
 </navigation>
