@@ -24,7 +24,6 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layou
         findNavController().navigate(AnimeFragmentDirections.actionCharacterFragmentToAnimeDetailFragment(id))
     }
 
-
     override fun initialize() {
         super.initialize()
         binding.animeRecyclerView.apply {
@@ -39,7 +38,6 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layou
     }
 
     private fun subscribeToAnime() {
-
         lifecycleScope.launch {
             viewModel.fetchAnime().observe(viewLifecycleOwner) {
                 lifecycleScope.launch {

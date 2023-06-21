@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/characterFragment">
+    app:startDestination="@id/fragment">
 
     <fragment
         android:id="@+id/characterFragment"
@@ -46,5 +46,10 @@
             android:id="@+id/action_mangaFragment_to_mangaDetailFragment"
             app:destination="@id/mangaDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.android4homework2.ui.fragments.Fragment"
+        android:label="fragment_"
+        tools:layout="@layout/fragment_" />
 
 </navigation>
