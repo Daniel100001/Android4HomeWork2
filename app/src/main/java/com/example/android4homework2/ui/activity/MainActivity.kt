@@ -24,7 +24,6 @@ class MainActivity : AppCompatActivity() {
         animeFragment,
         mangaFragment
     )
-
     private val fragListNames = listOf(
         "Anime",
         "Manga"
@@ -43,6 +42,9 @@ class MainActivity : AppCompatActivity() {
         val adapter = AnimeViewPager(this, fragList)
         binding.viewPager.adapter = adapter
 
+        TabLayoutMediator(binding.tabLayout, binding.viewPager){
+                tab,pos -> tab.text = fragListNames[pos]
+        }.attach()
     }
 
     private fun setUpNav(){
