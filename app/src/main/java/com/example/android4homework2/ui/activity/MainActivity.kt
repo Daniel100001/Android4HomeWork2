@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.example.android4homework2.ui.adapters.AnimeAdapter
 import com.example.android4homework2.ui.adapters.AnimeViewPager
 import com.example.android4homework2.ui.fragments.anime.AnimeFragment
 import com.example.android4homework2.ui.fragments.manga.MangaFragment
@@ -17,16 +16,10 @@ import dagger.hilt.android.AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private var animeFragment=  AnimeFragment()
-    private var mangaFragment =  MangaFragment()
 
-    private val fragList = listOf(
-        animeFragment,
-        mangaFragment
-    )
     private val fragListNames = listOf(
-        "Anime",
-        "Manga"
+        "Item1",
+        "Item2"
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,11 +32,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initialize() {
-        val adapter = AnimeViewPager(this, fragList)
+        val adapter = AnimeViewPager(this)
         binding.viewPager.adapter = adapter
-
-        TabLayoutMediator(binding.tabLayout, binding.viewPager){
-                tab,pos -> tab.text = fragListNames[pos]
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, pos ->
+            tab.text = fragListNames[pos]
         }.attach()
     }
 
