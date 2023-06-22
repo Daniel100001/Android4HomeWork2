@@ -5,16 +5,6 @@
     android:id="@+id/nav_graph.xml"
     app:startDestination="@id/fragment">
 
-    <fragment
-        android:id="@+id/characterFragment"
-        android:name="com.example.android4homework2.ui.fragments.anime.AnimeFragment"
-        android:label="fragment_character"
-        tools:layout="@layout/fragment_anime">
-
-        <action
-            android:id="@+id/action_characterFragment_to_animeDetailFragment"
-            app:destination="@id/animeDetailFragment" />
-    </fragment>
 
     <fragment
         android:id="@+id/animeDetailFragment"
@@ -26,6 +16,7 @@
             android:name="id"
             app:argType="integer" />
     </fragment>
+
     <fragment
 
         android:id="@+id/mangaDetailFragment"
@@ -37,19 +28,18 @@
             app:argType="integer" />
     </fragment>
 
-    <fragment
-        android:id="@+id/mangaFragment"
-        android:name="com.example.android4homework2.ui.fragments.manga.MangaFragment"
-        android:label="MangaFragment">
 
-        <action
-            android:id="@+id/action_mangaFragment_to_mangaDetailFragment"
-            app:destination="@id/mangaDetailFragment" />
-    </fragment>
     <fragment
         android:id="@+id/fragment"
         android:name="com.example.android4homework2.ui.fragments.Fragment"
         android:label="fragment_"
-        tools:layout="@layout/fragment_" />
+        tools:layout="@layout/fragment_" >
+        <action
+            android:id="@+id/action_fragment_to_mangaDetailFragment"
+            app:destination="@id/mangaDetailFragment" />
+        <action
+            android:id="@+id/action_fragment_to_animeDetailFragment"
+            app:destination="@id/animeDetailFragment" />
+    </fragment>
 
 </navigation>

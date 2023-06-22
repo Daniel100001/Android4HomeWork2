@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.android4homework2.base.BaseFragment
 import com.example.android4homework2.ui.adapters.AnimeAdapter
+import com.example.android4homework2.ui.fragments.FragmentDirections
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentAnimeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +22,7 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layou
     private val animeAdapter = AnimeAdapter(this::onItemClick)
 
     private fun onItemClick(id: Int) {
-        findNavController().navigate(AnimeFragmentDirections.actionCharacterFragmentToAnimeDetailFragment(id))
+        findNavController().navigate(FragmentDirections.actionFragmentToAnimeDetailFragment(id))
     }
 
     override fun initialize() {
