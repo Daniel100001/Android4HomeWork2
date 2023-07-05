@@ -2,7 +2,7 @@ package com.example.android4homework2.data.remote.apisevices
 
 import com.example.android4homework2.data.models.AnimeResponse
 import com.example.android4homework2.data.models.AnimeModel
-import com.example.android4homework2.data.models.AnimeDetail
+import com.example.android4homework2.data.models.details.AnimeDetail
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
@@ -16,7 +16,7 @@ interface AnimeApiService {
     ): AnimeResponse<AnimeModel>
 
     @GET("anime/{id}")
-    suspend fun fetchIdAnime(
+    suspend fun fetchSingleAnime(
         @Path("id") id: Int
     ): AnimeDetail
 }

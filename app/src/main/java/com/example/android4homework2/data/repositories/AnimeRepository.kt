@@ -13,14 +13,13 @@ class AnimeRepository @Inject constructor(private val service: AnimeApiService) 
     fun fetchAnime() = Pager(
         PagingConfig(
             pageSize = 10,
-            initialLoadSize = 20
+            initialLoadSize = 10
         )
     ) {
         AnimePagingSource(service)
     }.liveData
 
-
-    fun fetchIdAnime(id: Int) = doRequest {
-        service.fetchIdAnime(id)
+    fun fetchSingleAnime(id: Int) = doRequest {
+        service.fetchSingleAnime(id)
     }
 }

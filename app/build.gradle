@@ -84,7 +84,7 @@ dependencies {
     // OkHttp
     implementation platform("com.squareup.okhttp3:okhttp-bom:4.10.0")
     implementation "com.squareup.okhttp3:okhttp"
-    implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.6"
 
     //paging 3
     def paging_version = "3.1.1"
@@ -117,5 +117,8 @@ dependencies {
 
     // View Pager
     implementation 'androidx.viewpager2:viewpager2:1.0.0'
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
 
 }

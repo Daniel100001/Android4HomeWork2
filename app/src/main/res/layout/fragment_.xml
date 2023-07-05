@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.android4homework2.ui.fragments.Fragment">
+    tools:context="com.example.android4homework2.ui.fragments.home.HomeFragment">
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/view_pager"
@@ -20,7 +20,8 @@
         android:layout_height="50dp"
         android:background="#443343"
         app:tabIndicatorHeight="0dp"
-        app:tabSelectedTextColor="#FF9100"
+
+        app:tabSelectedTextColor="#C5554F"
         app:tabTextColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

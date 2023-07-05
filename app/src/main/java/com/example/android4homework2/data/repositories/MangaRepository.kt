@@ -13,14 +13,13 @@ class MangaRepository @Inject constructor(private val service: MangaApiService) 
     fun fetchManga() = Pager(
         PagingConfig(
             pageSize = 10,
-            initialLoadSize = 20
+            initialLoadSize = 10
         )
     ) {
         MangaPagingSource(service)
     }.liveData
 
-
-    fun fetchMangaById(id: Int) = doRequest {
-        service.fetchMangaById(id)
+    fun fetchSingleManga(id: Int) = doRequest {
+        service.fetchSingleManga(id)
     }
 }

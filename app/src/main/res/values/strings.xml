@@ -2,4 +2,6 @@
     <string name="app_name">Android4HomeWork1</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_view">Image View</string>
+    <string name="image_view_anime_detail">Image View</string>
 </resources>

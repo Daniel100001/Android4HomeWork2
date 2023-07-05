@@ -1,6 +1,5 @@
 package com.example.android4homework2.ui.fragments.anime.detail
 
-import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
@@ -25,7 +24,7 @@ class DetailAnimeFragment :
     }
 
     private fun subscribeToAnime() {
-        viewModel.fetchIdAnime(args.id  + 2).observe(viewLifecycleOwner) {
+        viewModel.fetchIdAnime(args.id ).observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {
                     Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
@@ -34,12 +33,11 @@ class DetailAnimeFragment :
                     Toast.makeText(requireContext(), "loading", Toast.LENGTH_SHORT).show()
                 }
                 is Resource.Success -> {
-                    Log.e("result", "${args.id}")
-                    binding.textView.text = it.data?.animeModel?.attributes?.detail
                     Glide.with(binding.imageView)
                         .load(it.data?.animeModel?.attributes?.posterImage?.original)
                         .into(binding.imageView)
-                    binding.textView.text = it.data?.animeModel?.attributes?.title?.nameInEnglish
+                    binding.name.text = it.data?.animeModel?.attributes?.title?.nameInEnglish
+                    binding.description.text = it.data?.animeModel?.attributes?.description
                 }
             }
         }

@@ -1,7 +1,7 @@
 package com.example.android4homework2.data.remote.apisevices
 
 import com.example.android4homework2.data.models.AnimeResponse
-import com.example.android4homework2.data.models.MangaDetail
+import com.example.android4homework2.data.models.details.MangaDetail
 import com.example.android4homework2.data.models.MangaModel
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -16,7 +16,7 @@ interface MangaApiService {
     ): AnimeResponse<MangaModel>
 
     @GET("manga/{id}")
-    suspend fun fetchMangaById(
+    suspend fun fetchSingleManga(
         @Path("id") id: Int
     ): MangaDetail
 }

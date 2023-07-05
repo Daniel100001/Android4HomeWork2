@@ -25,7 +25,7 @@ class MangaDetailFragment :
     }
 
     private fun subscribeToAnime() {
-        viewModel.fetchMangaById(args.id + 1).observe(viewLifecycleOwner) {
+        viewModel.fetchMangaById(args.id).observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {
                     Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
@@ -34,11 +34,11 @@ class MangaDetailFragment :
                     Toast.makeText(requireContext(), "loading", Toast.LENGTH_SHORT).show()
                 }
                 is Resource.Success -> {
-                    binding.textView.text = it.data?.animeModel?.attributes?.title?.nameInJapanese
                     Glide.with(binding.imageView)
                         .load(it.data?.animeModel?.attributes?.posterImage?.original)
                         .into(binding.imageView)
-                    binding.textView.text = it.data?.animeModel?.attributes?.title?.nameInJapanese
+                    binding.name.text = it.data?.animeModel?.attributes?.title?.nameInEnglish
+                    binding.description.text = it.data?.animeModel?.attributes?.description
                 }
             }
         }

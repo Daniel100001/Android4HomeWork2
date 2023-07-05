@@ -11,9 +11,7 @@
         android:name="com.example.android4homework2.ui.fragments.anime.detail.DetailAnimeFragment"
         android:label="fragment_anime_detail"
         tools:layout="@layout/fragment_anime_detail">
-
-        <argument
-            android:name="id"
+        <argument android:name="id"
             app:argType="integer" />
     </fragment>
 
@@ -31,9 +29,10 @@
 
     <fragment
         android:id="@+id/fragment"
-        android:name="com.example.android4homework2.ui.fragments.Fragment"
+        android:name="com.example.android4homework2.ui.fragments.home.HomeFragment"
         android:label="fragment_"
         tools:layout="@layout/fragment_" >
+
         <action
             android:id="@+id/action_fragment_to_mangaDetailFragment"
             app:destination="@id/mangaDetailFragment" />

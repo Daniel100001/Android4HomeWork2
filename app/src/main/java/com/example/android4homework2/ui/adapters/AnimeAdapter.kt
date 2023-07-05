@@ -1,6 +1,5 @@
 package com.example.android4homework2.ui.adapters
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -18,8 +17,9 @@ class AnimeAdapter(private val onItemClick: (id: Int) -> Unit) :
 
         init {
             itemView.setOnClickListener {
-                onItemClick(position)
-                Log.e("result", "adapter anime = $position")
+                getItem(absoluteAdapterPosition)?.let {
+                    onItemClick(it.id.toInt())
+                }
             }
         }
 

@@ -16,6 +16,7 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(@LayoutRes layoutI
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initialize()
+        refreshData()
         setupListener()
         setupSubscribes()
     }
@@ -25,4 +26,5 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(@LayoutRes layoutI
     protected open fun setupListener() {}
 
     protected open fun setupSubscribes() {}
+    protected open fun refreshData(){}
 }

@@ -17,7 +17,9 @@ class MangaAdapter(private val onItemClick: (id: Int) -> Unit) :
 
         init {
             itemView.setOnClickListener {
-                onItemClick(absoluteAdapterPosition)
+                getItem(absoluteAdapterPosition)?.let {
+                    onItemClick(it.id.toInt())
+                }
             }
         }
 

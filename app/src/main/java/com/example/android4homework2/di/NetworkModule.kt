@@ -8,7 +8,6 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
@@ -18,12 +17,12 @@ object NetworkModule {
 
     @Singleton
     @Provides
-    fun provideMangaApiService(retrofitClient: RetrofitClient) =
+    fun provideMangaApiService() =
         RetrofitClient().provideMangaApiService()
 
     @Singleton
     @Provides
-    fun provideAnimeApiService(retrofitClient: RetrofitClient) =
+    fun provideAnimeApiService() =
         RetrofitClient().provideAnimeApiService()
 
 }
