@@ -17,13 +17,13 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(@LayoutRes layoutI
         super.onViewCreated(view, savedInstanceState)
         initialize()
         refreshData()
-        setupListener()
+        setupListeners()
         setupSubscribes()
     }
 
     protected open fun initialize() {}
 
-    protected open fun setupListener() {}
+    protected open fun setupListeners() {}
 
     protected open fun setupSubscribes() {}
     protected open fun refreshData(){}

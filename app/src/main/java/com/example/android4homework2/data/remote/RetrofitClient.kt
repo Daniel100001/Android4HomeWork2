@@ -2,6 +2,7 @@ package com.example.android4homework2.data.remote
 
 import com.example.android4homework2.data.remote.apisevices.AnimeApiService
 import com.example.android4homework2.data.remote.apisevices.MangaApiService
+import com.example.android4homework2.data.remote.apisevices.SingInApiService
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -25,12 +26,17 @@ class RetrofitClient {
         .addConverterFactory(GsonConverterFactory.create())
         .build()
 
+
     fun provideAnimeApiService(): AnimeApiService {
         return retrofitClient.create(AnimeApiService::class.java)
     }
 
     fun provideMangaApiService(): MangaApiService {
         return retrofitClient.create(MangaApiService::class.java)
+    }
+
+    fun provideSingInApiService(): SingInApiService{
+        return retrofitClient.create(SingInApiService::class.java)
     }
     fun provideLoggingInterceptor() = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 }

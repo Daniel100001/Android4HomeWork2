@@ -20,7 +20,6 @@ class MangaDetailFragment :
     private val args by navArgs<MangaDetailFragmentArgs>()
 
     override fun setupSubscribes() {
-        super.setupSubscribes()
         subscribeToAnime()
     }
 
