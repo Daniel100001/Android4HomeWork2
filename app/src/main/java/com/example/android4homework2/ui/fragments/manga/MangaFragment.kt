@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.android4homework2.base.BaseFragment
 import com.example.android4homework2.ui.adapters.MangaAdapter
-import com.example.android4homework2.ui.fragments.home.HomeFragmentDirections
+import com.example.android4homework2.ui.fragments.viewpager.ViewPagerFragmentDirections
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentMangaBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,9 +21,11 @@ class MangaFragment : BaseFragment<FragmentMangaBinding, MangaViewModel>(R.layou
     override val viewModel: MangaViewModel by viewModels()
     private val mangaAdapter = MangaAdapter(this::onItemClick)
 
-    private fun onItemClick(id: Int) {
+    private fun onItemClick(id: String) {
         findNavController().navigate(
-            HomeFragmentDirections.actionFragmentToMangaDetailFragment(id)
+            ViewPagerFragmentDirections.actionViewPagerFragmentToMangaDetailFragment2(
+                id
+            )
         )
     }
 

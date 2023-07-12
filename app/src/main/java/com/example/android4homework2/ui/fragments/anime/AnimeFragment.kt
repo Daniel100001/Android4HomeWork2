@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.android4homework2.base.BaseFragment
 import com.example.android4homework2.ui.adapters.AnimeAdapter
-import com.example.android4homework2.ui.fragments.home.HomeFragmentDirections
+import com.example.android4homework2.ui.fragments.viewpager.ViewPagerFragmentDirections
 import com.example.rickandmorty.R
 import com.example.rickandmorty.databinding.FragmentAnimeBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,8 +21,12 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layou
     override val viewModel: AnimeViewModel by viewModels()
     private val animeAdapter = AnimeAdapter(this::onItemClick)
 
-    private fun onItemClick(id: Int) {
-        findNavController().navigate(HomeFragmentDirections.actionFragmentToAnimeDetailFragment(id))
+    private fun onItemClick(id: String) {
+        findNavController().navigate(
+            ViewPagerFragmentDirections.actionViewPagerFragmentToDetailAnimeFragment2(
+                id
+            )
+        )
     }
 
     override fun initialize() {
@@ -50,7 +54,6 @@ class AnimeFragment : BaseFragment<FragmentAnimeBinding, AnimeViewModel>(R.layou
         }
         binding.swipeRefreshLayout.isRefreshing = false
     }
-
 
     override fun setupSubscribes() {
         subscribeToAnime()

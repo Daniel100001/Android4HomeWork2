@@ -20,11 +20,11 @@ class DetailAnimeFragment :
     private val args by navArgs<DetailAnimeFragmentArgs>()
 
     override fun setupSubscribes() {
-        subscribeToAnime()
+        subscribeToManga()
     }
 
-    private fun subscribeToAnime() {
-        viewModel.fetchIdAnime(args.id ).observe(viewLifecycleOwner) {
+    private fun subscribeToManga() {
+        viewModel.fetchIdAnime(args.id).observe(viewLifecycleOwner) {
             when (it) {
                 is Resource.Error -> {
                     Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()

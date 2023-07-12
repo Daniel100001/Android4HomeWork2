@@ -9,5 +9,5 @@ import javax.inject.Inject
 class DetailMangaViewModel @Inject constructor(private val repository: MangaRepository) :
     ViewModel() {
 
-    fun fetchMangaById(id: Int) = repository.fetchSingleManga(id)
+    fun fetchMangaById(id: String) = repository.fetchSingleManga(id)
 }

@@ -1,4 +1,4 @@
-package com.example.android4homework2.ui.fragments.home
+package com.example.android4homework2.ui.fragments.viewpager
 
 import androidx.fragment.app.viewModels
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -10,10 +10,10 @@ import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentBinding, HomeViewModel>(R.layout.fragment_) {
+class ViewPagerFragment : BaseFragment<FragmentBinding, ViewPagerViewModel>(R.layout.fragment_) {
 
     override val binding by viewBinding(FragmentBinding::bind)
-    override val viewModel: HomeViewModel by viewModels()
+    override val viewModel: ViewPagerViewModel by viewModels()
 
     private val fragListNames = listOf(
         "Anime",

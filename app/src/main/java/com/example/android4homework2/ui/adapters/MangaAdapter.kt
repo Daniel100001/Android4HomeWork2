@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.android4homework2.data.models.MangaModel
 import com.example.rickandmorty.databinding.ItemKitsuBinding
 
-class MangaAdapter(private val onItemClick: (id: Int) -> Unit) :
+class MangaAdapter(private val onItemClick: (id: String) -> Unit) :
     PagingDataAdapter<MangaModel, MangaAdapter.MangaViewHolder>(DiffUtilCallback()) {
 
     inner class MangaViewHolder(private val binding: ItemKitsuBinding) :
@@ -18,7 +18,7 @@ class MangaAdapter(private val onItemClick: (id: Int) -> Unit) :
         init {
             itemView.setOnClickListener {
                 getItem(absoluteAdapterPosition)?.let {
-                    onItemClick(it.id.toInt())
+                    onItemClick(it.id)
                 }
             }
         }

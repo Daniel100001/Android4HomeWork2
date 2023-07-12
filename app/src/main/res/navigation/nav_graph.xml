@@ -3,47 +3,25 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/singInFragment">
+    app:startDestination="@id/mainFlowFragment">
 
 
     <fragment
-        android:id="@+id/animeDetailFragment"
-        android:name="com.example.android4homework2.ui.fragments.anime.detail.DetailAnimeFragment"
-        android:label="fragment_anime_detail"
-        tools:layout="@layout/fragment_anime_detail">
-        <argument android:name="id"
-            app:argType="integer" />
-    </fragment>
+        android:id="@+id/mainFlowFragment"
+        android:name="com.example.android4homework2.ui.fragments.main.MainFlowFragment"
+        android:label="fragment_main_flow"
+        tools:layout="@layout/fragment_main_flow" />
 
     <fragment
-
-        android:id="@+id/mangaDetailFragment"
-        android:name="com.example.android4homework2.ui.fragments.manga.detail.MangaDetailFragment"
-        android:label="MangaDetailFragment">
-
-        <argument
-            android:name="id"
-            app:argType="integer" />
-    </fragment>
-
-
-    <fragment
-        android:id="@+id/fragment"
-        android:name="com.example.android4homework2.ui.fragments.home.HomeFragment"
-        android:label="fragment_"
-        tools:layout="@layout/fragment_" >
-
+        android:id="@+id/singInFlowFragment"
+        android:name="com.example.android4homework2.ui.fragments.register.flow.SingInFlowFragment"
+        android:label="fragment_sing_in_flow"
+        tools:layout="@layout/fragment_sing_in_flow" >
         <action
-            android:id="@+id/action_fragment_to_mangaDetailFragment"
-            app:destination="@id/mangaDetailFragment" />
-        <action
-            android:id="@+id/action_fragment_to_animeDetailFragment"
-            app:destination="@id/animeDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/singInFragment"
-        android:name="com.example.android4homework2.ui.fragments.register.SingInFragment"
-        android:label="fragment_sing_in"
-        tools:layout="@layout/fragment_sing_in" />
+            android:id="@+id/action_singInFlowFragment_to_mainFlowFragment"
+            app:destination="@id/mainFlowFragment"
+            app:popUpTo="@id/singInFlowFragment"
+            app:popUpToInclusive="true"/>
 
+    </fragment>
 </navigation>
