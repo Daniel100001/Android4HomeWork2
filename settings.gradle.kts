@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Android4HomeWork1"
-include ':app'
+include (":app")
